@@ -1,0 +1,78 @@
+:root {
+    --maincolor : #ffffff;
+    --seconderycolor : #f8f8f6;
+    --fontcolor1 : #a5a5a3;
+    --color1 : #19d25b;
+    --color2 : #038f36;
+
+
+    --bordervalue : 0px;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100dvh;
+    user-select: none;
+    font-family: Poppins;
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--seconderycolor);
+    color: var(--fontcolor1);
+   
+}
+
+
+.container {
+    max-width: 100%;
+    height: 100dvh;
+    /* padding: 0 3% ; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    border-radius: 10px;
+    padding: 6%;
+    box-sizing: border-box;
+    background-color: var(--maincolor);
+}
+
+.container p {
+    text-align: center;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Begin {
+    width: 50%;
+    height: 50px;
+    border: 0;
+    background-color: var(--color2);
+    color: var(--seconderycolor);
+    font-size: 16px;
+
+}
+
+@media (width < 512px) {
+    .container {
+        border: 0;
+        border-radius: 0px;
+    }
+}
+
+@media (width > 512px) {
+    .container {
+        max-height: 90dvh;
+        max-width: 360px;
+        margin: 5dvh auto auto auto;
+    }
+}
