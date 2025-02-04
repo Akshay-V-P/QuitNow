@@ -1,3 +1,8 @@
+import { setValues } from "./initialise-values.js"
+
+if (localStorage.getItem("initialised")) {
+    window.location.href = "game.html"
+}
 const smokeADay = document.querySelector("#smokeAday")
 const ciggaretteCost = document.querySelector("#ciggarettecost")
 const packContain = document.querySelector("#packcost")
@@ -24,6 +29,8 @@ continueBtn.addEventListener("click", () => {
         localStorage.setItem("ciggarettecost", ciggaretteCostVal)
         localStorage.setItem("packcost", packContainVal)
         localStorage.setItem("yearofsmoking", yearOfsmokingVal)
+        localStorage.setItem("initialised", "yes")
+        setValues()
         console.log("Values saved successfuly");
         window.location.href = "game.html"
     }
