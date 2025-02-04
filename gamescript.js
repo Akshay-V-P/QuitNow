@@ -9,9 +9,12 @@ const askForPermition = document.querySelector(".askpermition")
 const yesBtn = document.querySelector("#yes")
 const noBtn = document.querySelector("#no")
 const stressCount = document.querySelector(".stressCount")
+const menuBtn = document.querySelector(".menubtn")
+const menuDiv = document.querySelector(".menu")
+const closeMenu = document.querySelector(".closemenu")
 
 let dynamicHeight = 0
-let variableHeight = 10
+let variableHeight = 0.10
 let height
 let haveConsent
 let stressCountVar = Number(localStorage.getItem("stresscount"))
@@ -43,6 +46,16 @@ noBtn.addEventListener("click", () => {
     haveConsent = false
     dynamicHeight = 0
 })
+
+menuBtn.addEventListener("click", () => {
+    menuBtn.style.animation = "rotate ease .5s"
+    menuDiv.style.display = "flex"
+})
+
+closeMenu.addEventListener("click", () => {
+    menuDiv.style.display = "none"
+    menuBtn.style.animation = "none"
+} )
 
 function heightCalculator() {
     if (burnedDiv.style.height == "") {
