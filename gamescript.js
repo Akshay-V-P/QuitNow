@@ -12,6 +12,7 @@ const stressCount = document.querySelector(".stressCount")
 const menuBtn = document.querySelector(".menubtn")
 const menuDiv = document.querySelector(".menu")
 const closeMenu = document.querySelector(".closemenu")
+const savingsHeadings = document.querySelectorAll(".valueheading")
 
 let dynamicHeight = 0
 let variableHeight = 0.10
@@ -50,6 +51,12 @@ noBtn.addEventListener("click", () => {
 menuBtn.addEventListener("click", () => {
     menuBtn.style.animation = "rotate ease .5s"
     menuDiv.style.display = "flex"
+    savingsHeadings[0].innerHTML = localStorage.getItem("daysavings")
+    savingsHeadings[1].innerHTML = localStorage.getItem("weeksavings")
+    savingsHeadings[2].innerHTML = localStorage.getItem("monthsavings")
+    savingsHeadings[3].innerHTML = localStorage.getItem("quartersavings")
+    savingsHeadings[4].innerHTML = localStorage.getItem("halfyearsavings")
+    savingsHeadings[5].innerHTML = localStorage.getItem("yearsavings")
 })
 
 closeMenu.addEventListener("click", () => {

@@ -31,6 +31,7 @@ continueBtn.addEventListener("click", () => {
         localStorage.setItem("yearofsmoking", yearOfsmokingVal)
         localStorage.setItem("initialised", "yes")
         setValues()
+        calculateSavings()
         console.log("Values saved successfuly");
         window.location.href = "game.html"
     }
@@ -40,4 +41,19 @@ continueBtn.addEventListener("click", () => {
 function checkValidInput(inputName) {
     continueFlag.push(false)
     inputName.style.outline = "2px solid red"
+}
+
+function calculateSavings() {
+    let daySavings = Number(localStorage.getItem("smokeaday")) * Number(localStorage.getItem("ciggarettecost"))
+    localStorage.setItem("daysavings", daySavings)
+    let weekSavings = Number(localStorage.getItem("daysavings")) * 7
+    let monthSavings = Number(localStorage.getItem("daysavings")) * 30
+    localStorage.setItem("weeksavings", weekSavings)
+    localStorage.setItem("monthsavings", monthSavings)
+    let quarterSavings = Number(localStorage.getItem("monthsavings")) * 3
+    let halfYearSavings = Number(localStorage.getItem("monthsavings")) * 6
+    let yearSavings = Number(localStorage.getItem("monthsavings")) * 12
+    localStorage.setItem("quartersavings", quarterSavings)
+    localStorage.setItem("halfyearsavings", halfYearSavings)
+    localStorage.setItem("yearsavings", yearSavings)
 }
